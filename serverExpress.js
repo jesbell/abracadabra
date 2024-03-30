@@ -23,10 +23,19 @@ app.get('/usuarios', (req, res) => {
 // Agregando middleware
 app.use("/abracadabra/juego/:usuario", (req, res, next) => {
     const usuario = req.params.usuario;
+    if(usuarios.includes(usuario)){
+        next();
+    }
+    else{
+        const imagenError = path.join(__dirname, 'assets', 'who.jpeg');
+        res.sendFile(imagenError);
+    }
 
 });
 
-
+app.get('/abracadabra/juego/:usuario', (req, res) => {
+    res.sendFile(__dirname + '/index.html')
+});
 
 
 app.get("*", (req, res) => {
