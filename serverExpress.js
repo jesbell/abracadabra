@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 // Se crea un arreglo de nombres
-const usuarios = ['Juan', 'Jocelyn', 'Astrid', 'MAria', 'Ignacia', 'Javier', 'brian'];
+const usuarios = ['Juan', 'Jocelyn', 'Astrid', 'Maria', 'Ignacia', 'Javier', 'Brian'];
 
 // Creando servidor con express en puerto 3000
 app.listen(3000, () => {
@@ -23,19 +23,23 @@ app.get('/usuarios', (req, res) => {
 // Agregando middleware
 app.use("/abracadabra/juego/:usuario", (req, res, next) => {
     const usuario = req.params.usuario;
+    // Buscando si el usuario existe en el arreglo
     if(usuarios.includes(usuario)){
         next();
     }
     else{
+        // Si no existe usuario responde con esta imagen de error
         const imagenError = path.join(__dirname, 'assets', 'who.jpeg');
         res.sendFile(imagenError);
     }
 
 });
 
+// Creando un get que devuelva el documento index.html
 app.get('/abracadabra/juego/:usuario', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 });
+
 
 
 app.get("*", (req, res) => {
