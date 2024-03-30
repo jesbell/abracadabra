@@ -28,7 +28,7 @@ Si el parametro (:usuario) esta incluido, nos mostrara el juego, de no ser así 
 | --- | --- |
 | ![suario_desconocido](/assets/usuario_desconocido.png)| ![usuario_correcto](/assets/usuario_correcto.png) |
 
-- Es para ser usada dentro del /abracadabra/juego/:usuario, dado que nos devuelve una página html. Si el usuario es correcto, podemos comenzar a usar el juego. Allí debemos hacer click en los sombreros para encontrar en conejo. Si no encontramos el conejos nos mostrara una imagen distinta.
+- La 3ra ruta, es para ser usada dentro del /abracadabra/juego/:usuario, dado que nos devuelve una página html. Si el usuario es correcto, podemos comenzar a usar el juego. Allí debemos hacer click en los sombreros para encontrar el conejo. Si no encontramos el conejito nos mostrara una imagen distinta.
   
 | Sombrero incorrecto | Sombrero correcto |
 | --- | --- |
@@ -55,7 +55,7 @@ Para utilizar este proyecto debes clonar este repositorio en tu máquina, utiliz
 git clone git@github.com:jesbell/abracadabra.git
 ```
 
-Una vez allí puedes abrir el proyecto donde te sea más comodo. Pero dentro de la carpeta del proyecto deberas inicializar, debes realizar las instalación de los node_modules, con el siguiente comando.
+Una vez allí puedes abrir el proyecto donde te sea más comodo. Pero dentro de la carpeta del proyecto deberas realizar las instalación de los node_modules, con el siguiente comando.
 ```
 npm install
 ```
@@ -92,4 +92,4 @@ Si encontraste cualquier valor en este proyecto o quieres contribuir, aquí est�
 
 ---
 
-⌨️ con ❤️ por [Joselyn Gonzaléz](https://github.com/jesbell) 😊
+⌨️ con ❤️ por [Joselyn Gonzalez](https://github.com/jesbell) 😊
