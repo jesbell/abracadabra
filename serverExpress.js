@@ -40,8 +40,19 @@ app.get('/abracadabra/juego/:usuario', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 });
 
-
+// Creando ruta para validar si parámetro n conincide 
+// con número aleatorio
+app.get("/abracadabra/conejo/:n", (req, res) => {
+    // Creando número aleatorio entre 1 y 4
+    const aleatorio = Math.floor(Math.random() * 4) + 1;
+    // Recibiendo parametro n
+    const numero = req.params.n;
+    // Verificando si parámetro coincide con num aleatorio
+    const imgRespuesta = (aleatorio == numero) ? 'conejito.jpg' : 'voldemort.jpg';
+    // se envía la imagen como respuesta
+    res.sendFile(path.join(__dirname, 'assets', imgRespuesta));
+});
 
 app.get("*", (req, res) => {
-    res.send("<center><h1>Sorry, aquí no ha nada :/ </h1></center>");
+    res.send("<center><h1>Esta página no existe... </h1></center>");
 });
