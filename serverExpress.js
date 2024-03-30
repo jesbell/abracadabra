@@ -20,15 +20,16 @@ app.get('/usuarios', (req, res) => {
     res.json({usuarios: usuarios});
 });
 
-// Agregando middleware
+// Agregando middleware para validar que usuario existe
 app.use("/abracadabra/juego/:usuario", (req, res, next) => {
+    // Recibiendo parametro usuario
     const usuario = req.params.usuario;
     // Buscando si el usuario existe en el arreglo
     if(usuarios.includes(usuario)){
         next();
     }
     else{
-        // Si no existe usuario responde con esta imagen de error
+        // Si no existe usuario responde con imagen de error
         const imagenError = path.join(__dirname, 'assets', 'who.jpeg');
         res.sendFile(imagenError);
     }
@@ -53,6 +54,7 @@ app.get("/abracadabra/conejo/:n", (req, res) => {
     res.sendFile(path.join(__dirname, 'assets', imgRespuesta));
 });
 
+// Ruta genérica 
 app.get("*", (req, res) => {
     res.send("<center><h1>Esta página no existe... </h1></center>");
 });
