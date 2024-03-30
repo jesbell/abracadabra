@@ -41,8 +41,8 @@ app.get('/abracadabra/juego/:usuario', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 });
 
-// Creando ruta para validar si parámetro n conincide 
-// con número aleatorio
+// Creando ruta para validar si parámetro n 
+// coincide con número aleatorio
 app.get("/abracadabra/conejo/:n", (req, res) => {
     // Creando número aleatorio entre 1 y 4
     const aleatorio = Math.floor(Math.random() * 4) + 1;
